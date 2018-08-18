@@ -26,7 +26,7 @@ footer {
 
 .backg{
   border-radius: 15px;
-  background-color: #ECE9E8;
+  background-color: #5AD4BF;
   align-content: center;
   padding: 5%;
     margin-top: 5%;
@@ -40,6 +40,6 @@ footer {
 }
 
 .bakg{
-    background-color: #9D9997;
+    background-color: azure;
     border-radius: 5px;
 }
