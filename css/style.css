@@ -8,16 +8,38 @@ footer {
 
 }
 #myCarousel{
-  margin: 2%;
+  margin: 0;
+
 }
 .carousel-inner img {
   width: 100%;
   margin: auto;
-  min-height:200px;
+  min-height:100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 320px) {
 .carousel-caption {
   display: none;
 }
+
+}
+
+.backg{
+  border-radius: 15px;
+  background-color: #ECE9E8;
+  align-content: center;
+  padding: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#fr1{
+  margin: 2%;
+
+
+}
+
+.bakg{
+    background-color: #9D9997;
+    border-radius: 5px;
 }
