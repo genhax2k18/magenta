@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+
+  <script src="js/script.js"></script>
 
 </head>
 <body>
@@ -25,7 +28,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="try.html">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -75,19 +78,35 @@
 </div>
 </div>
 </div>
-<div class="container text-center">
-  <h3>textual</h3><br>
+
+<!-- Recommended products-->
+<div id="contact" class="container-fluid bg-grey">
   <div class="row">
-    <div class="col-sm-8">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
+    <div class="col-sm-7">
+      <h1> Serve Others</h1>
+      <p> An initiative to serve those who need from the excess we throw.</p>
     </div>
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>
+    <div class="col-sm-5 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="orgName" name="name" placeholder="Org. Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="contact" name="contact" placeholder="Contact No." type="number" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="description" name="description" placeholder="Description" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+
+          <input type="text" id="autocomplete"/>
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
     </div>
   </div>
-</div><br>
+</div>
+
 
 <footer class="container-fluid text-center">
   <div>
@@ -99,5 +118,10 @@
   </div>
 </footer>
 
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+<script>
+  var input = document.getElementById('autocomplete');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+</script>
 </body>
 </html>
