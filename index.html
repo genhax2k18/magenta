@@ -12,9 +12,17 @@
 
   <script src="js/script.js" ></script>
 
+<<<<<<< HEAD
 
 </head>
 <body>
+=======
+  <script src="js/script.js"></script>
+  <script src="js/control.js"></script>
+</head>
+<body ng-app="myApp">
+
+>>>>>>> e9a8aaa4fc445a21811f7ed3694aae6580ba0442
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -27,9 +35,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="try.html">About</a></li>
         <li><a href="#">Contact</a></li>
+        <li><input  type="text" class="form-control" placeholder="Search" ng-model="search"></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" >
         <li><span class="glyphicon" id="userDispNm"  style="color: aliceblue; justify-content: center; "> </span> </li>
@@ -103,17 +112,24 @@
 
   </div>
 
+<<<<<<< HEAD
 
 
 
 
+=======
+</form>
+>>>>>>> e9a8aaa4fc445a21811f7ed3694aae6580ba0442
 </div>
     </center>
 
-
     <center>  <div class="backg">
+<<<<<<< HEAD
 
 
+=======
+    <form>
+>>>>>>> e9a8aaa4fc445a21811f7ed3694aae6580ba0442
         <div class="form-group row">
     <label for="inputEmail3" class="col-sm-1 col-form-label" ></label>
     <div class="col-sm-10">
@@ -138,22 +154,35 @@
       <button type="submit" class="btn btn-primary" onclick="funcUp()">Register</button>
     </div>
 
+<<<<<<< HEAD
   </div>   
 
 
 
 
 
+=======
+  </div>
+</form>
+>>>>>>> e9a8aaa4fc445a21811f7ed3694aae6580ba0442
 </div>
     </center>
-
 </div>
 </div>
 </div>
 
+<!-- Recommended Products
+<div  ng-controller="myCtrl">
+  <div class="container-fluid">
+
+  </div>
+  <h1 ng-repeat="x in records | orderBy: '' | filter:search" >{{x}}</h1>
+</div>-->
+
+
+<!-- service for food-->
 
 <div class="container text-center">
-  <h3>textual</h3><br>
   <div class="row">
     <div class="col-sm-7">
       <h1> Serve Others</h1>
