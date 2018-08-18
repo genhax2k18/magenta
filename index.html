@@ -11,9 +11,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
 
   <script src="js/script.js"></script>
-
+  <script src="js/control.js"></script>
 </head>
-<body>
+<body ng-app="myApp">
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -27,9 +27,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="try.html">About</a></li>
         <li><a href="#">Contact</a></li>
+        <li><input  type="text" class="form-control" placeholder="Search" ng-model="search"></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -103,18 +104,11 @@
 
   </div>
 
-
-
 </form>
-
-
 </div>
     </center>
 
-
     <center>  <div class="backg">
-
-
     <form>
         <div class="form-group row">
     <label for="inputEmail3" class="col-sm-1 col-form-label" ></label>
@@ -140,23 +134,26 @@
       <button type="submit" class="btn btn-primary">Register</button>
     </div>
 
-  </div>   
-
-
-
+  </div>
 </form>
-
-
 </div>
     </center>
-
 </div>
 </div>
 </div>
 
+<!-- Recommended Products
+<div  ng-controller="myCtrl">
+  <div class="container-fluid">
+
+  </div>
+  <h1 ng-repeat="x in records | orderBy: '' | filter:search" >{{x}}</h1>
+</div>-->
+
+
+<!-- service for food-->
 
 <div class="container text-center">
-  <h3>textual</h3><br>
   <div class="row">
     <div class="col-sm-7">
       <h1> Serve Others</h1>

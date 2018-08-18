@@ -1,8 +1,64 @@
-<html>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
-    <input type="text" id="autocomplete"/>
-    <script>
-      var input = document.getElementById('autocomplete');
-      var autocomplete = new google.maps.places.Autocomplete(input);
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Waste</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+
+  <script src="js/script.js"></script>
+  <script src="js/control.js"></script>
+</head>
+<body ng-app="myApp">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="try.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><input  type="text" class="form-control" placeholder="Search" ng-model="search"></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="1.jpg" alt="Img" class="img-responsive">
+    </div>
+    <div class="col-sm-6">
+      <h1 id="title"></h1>
+      <p id="description"></p>
+    </div>
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <div>
+    <ul>
+      <li>Contact Us</li>
+      <li>Terms & Conditions</li>
+    </ul>
+  </div>
+</footer>
+</body>
 </html>
