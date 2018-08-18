@@ -3,10 +3,13 @@
   border-radius: 0;
 }
 footer {
-  background-color: #f2f2f2;
-  padding: 25px;
-}
+  background-color: black;
+  padding: 1%;
 
+}
+#myCarousel{
+  margin: 2%;
+}
 .carousel-inner img {
   width: 100%;
   margin: auto;
