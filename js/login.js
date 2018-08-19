@@ -1,9 +1,14 @@
+{
+    
+const FIREBASE_MESSAGING = firebase.messaging();
+    const FIREBASE_DATABASE = firebase.database();
+    //sendMsg.addEventListener("submit",sendNot);
+
 firebase.auth().onAuthStateChanged(function(user)
 {
             if(user)
             {
-                window.alert(" Done !!");
-                var user=firebase.auth().currentUser;
+                
                 if(user!=null)
                 {
                     var email_id=user.email;
@@ -86,8 +91,10 @@ function funcUp(){
         });
 
     //var database = firebase.database();
+    
+    
 
-
+    subscribe();
 
   var rootRef = firebase.database().ref();
   var storesRef = rootRef.child('users/');
@@ -111,6 +118,44 @@ function signOut()
     
                             $("#sec2").removeClass("col-md-0").addClass("col-md-3");
                             $("#sec1").removeClass("col-md-12").addClass("col-md-9");
+    
+}
+
+    function subscribe(){
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user)
+        user.getIdToken().then(function(data)
+                {
+                    FIREBASE_DATABASE.ref('/token').push({
+                        token: data,
+                        uid: firebase.auth().currentUser.uid
+                    });
+                });
+        
+           
+    });
+    }
+                               
+    
+    function sendNot()
+    {
+                
+        
+
+                 var orgzName=document.getElementById("orgName").value;
+                var locInf=document.getElementById("autocomplete").value;
+                 var contInf=document.getElementById("contact").value;
+
+         var sendMsg=document.getElementById("description").value;
+
+        
+        FIREBASE_DATABASE.ref('/notification/').push({
+            Orgz: orgzName,
+            Contact: contInf, 
+            Location: locInf,
+            message: sendMsg
+        });
+}
     
 }
 
