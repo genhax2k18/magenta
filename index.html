@@ -57,15 +57,11 @@
       <div class="item active">
         <img src="img/logo2.png" class="img-responsive" alt="Image">
         <div class="carousel-caption">
-          <h3>My Text</h3>
-          <p>waste related</p>
         </div>
       </div>
       <div class="item">
-        <img src="img/logo2.png" class="img-responsive"  alt="Image">
+        <img src="img/slide1.jpg" onclick="searchContent1()" class="img-responsive"  alt="Image">
         <div class="carousel-caption">
-          <h3>My Text</h3>
-          <p>waste related</p>
         </div>
       </div>
     </div>
@@ -214,6 +210,9 @@
   function searchContent() {
     var searchData = document.getElementById("search").value;
     window.location.assign("try.html?search="+ searchData+"&enabled=true");
+  }
+    function searchContent1() {
+    window.location.assign("try.html?search=washingmachine&enabled=true");
   }
 </script>
 <script src="js/login.js" ></script>

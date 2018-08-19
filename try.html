@@ -203,8 +203,7 @@ document.getElementById("sp").innerHTML=du*10+av-pu-poc-pou-pod;
 var title2=document.getElementById("title");
 var title2Ref=firebase.database().ref("products/"+ item+"/2");
 title2Ref.on('value',function(snapchild1) {
-var name=snapchild1.child("name").val();
-
+var name1=snapchild1.child("name").val();
 var poc1=snapchild1.child("poc").val();
 var pou1=snapchild1.child("pou").val();
 var pod1=snapchild1.child("pod").val();
