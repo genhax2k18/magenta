@@ -38,7 +38,7 @@
   </div>
 </nav>
 
-<div class="container">
+<!--<div class="container">
   <div class="row">
     <div class="col-sm-6" height="100%">
       <img src="1.jpg" alt="Image" class="img-responsive">
@@ -48,9 +48,53 @@
       <p id="description"></p>
     </div>
   </div>
+</div>-->
+<div class="container" style="margin-top:5%">
+<div class="row slideanim">
+  <div class="col-sm-6" height="100%">
+    <img src="1.jpg" alt="Image" class="img-responsive">
+  </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1 id="title"></h1>
+        </div>
+        <div class="panel-body">
+          <p>Total Poluttion Release(made on creation,use and destruction of product):<strong id="totalpollution"></strong></p>
+          <p>Durability:<strong id="durability"></strong></p>
+          <p>Avaibility of spare parts:<strong id="avai"></strong></p>
+          <p>Plastic Content:<strong id="plasticcontent"></strong></p>
+          <p><i>Sustainable Point:</i><b id="sp"></b></p>
+        </div>
+        <div class="panel-footer">
+          <h3>₹<strong id="description"></strong></h3>
+          <button class="btn btn-lg">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6" height="100%">
+      <img src="1.jpg" alt="Image" class="img-responsive">
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1 id="title1"></h1>
+        </div>
+        <div class="panel-body">
+          <p>Total Poluttion Release(made on creation,use and destruction of product):<strong id="totalpollution1"></strong></p>
+          <p>Durability:<strong id="durability1"></strong></p>
+          <p>Avaibility of spare parts:<strong id="avaibility1"></strong></p>
+          <p>Plastic Content:<strong id="plasticcontent1"></strong></p>
+            <p><i>Sustainable Point:</i><b id="sp1"></b></p>
+        </div>
+        <div class="panel-footer">
+          <h3>₹<strong id="description1"></strong></h3>
+          <button class="btn btn-lg">Buy Now</button>
+        </div>
+      </div>
+    </div>
 </div>
-
-
+</div>
 <footer class="container-fluid text-center">
   <div>
     <ul>
@@ -95,20 +139,88 @@
 var item = reqParamsearch;
 
   var title=document.getElementById("title");
-  var titleRef=firebase.database().ref("products/"+ item +"/1/name");
-  titleRef.on('value',function(datasnapshot){
-  	title.innerText=datasnapshot.val();
+  var titleRef=firebase.database().ref("products/"+ item+"/1");
+  titleRef.on('value',function(snapchild) {
+ var name=snapchild.child("name").val();
 
-  });
+var poc=snapchild.child("poc").val();
+var pou=snapchild.child("pou").val();
+var pod=snapchild.child("pod").val();
+var du=snapchild.child("du").val();
+var aua=snapchild.child("av").val();
+var pu=snapchild.child("pu").val();
+var price=snapchild.child("price").val();
+document.getElementById("title").innerHTML=name;
+document.getElementById("totalpollution").innerHTML=pou+poc+pod;
+document.getElementById("durability").innerHTML=du;
+document.getElementById("avai").innerHTML=aua;
+document.getElementById("plasticcontent").innerHTML=pu;
+document.getElementById("description").innerHTML=price;
+document.getElementById("sp").innerHTML=(du*10)+aua-pu-poc-pou-pod;
+});
+var title2=document.getElementById("title");
+var title2Ref=firebase.database().ref("products/"+ item+"/2");
+title2Ref.on('value',function(snapchild1) {
+var name1=snapchild1.child("name").val();
+
+var poc1=snapchild1.child("poc").val();
+var pou1=snapchild1.child("pou").val();
+var pod1=snapchild1.child("pod").val();
+var du1=snapchild1.child("du").val();
+var aua1=snapchild1.child("av").val();
+var pu1=snapchild1.child("pu").val();
+var price1=snapchild1.child("price").val();
+document.getElementById("title1").innerHTML=name1;
+document.getElementById("totalpollution1").innerHTML=pou1+poc1+pod1;
+document.getElementById("durability1").innerHTML=du1;
+document.getElementById("avaibility1").innerHTML=aua1;
+document.getElementById("plasticcontent1").innerHTML=pu1;
+document.getElementById("description1").innerHTML=price1;
+document.getElementById("sp1").innerHTML=(du1*10)+aua1-pu1-poc1-pou1-pod1;
+});
 function searchContent(){
 item=document.getElementById("search").value;
+var title=document.getElementById("title");
+var titleRef=firebase.database().ref("products/"+ item+"/1");
+titleRef.on('value',function(snapchild) {
+var name=snapchild.child("name").val();
 
-  var title=document.getElementById("title");
-  var titleRef=firebase.database().ref("products/"+ item +"/1/name");
-  titleRef.on('value',function(datasnapshot){
-  	title.innerText=datasnapshot.val();
+var poc=snapchild.child("poc").val();
+var pou=snapchild.child("pou").val();
+var pod=snapchild.child("pod").val();
+var du=snapchild.child("du").val();
+var aua=snapchild.child("av").val();
+var pu=snapchild.child("pu").val();
+var price=snapchild.child("price").val();
+document.getElementById("title").innerHTML=name;
+document.getElementById("totalpollution").innerHTML=pou+poc+pod;
+document.getElementById("durability").innerHTML=du;
+document.getElementById("avai").innerHTML=aua;
+document.getElementById("plasticcontent").innerHTML=pu;
+document.getElementById("description").innerHTML=price;
+document.getElementById("sp").innerHTML=du*10+av-pu-poc-pou-pod;
+});
+var title2=document.getElementById("title");
+var title2Ref=firebase.database().ref("products/"+ item+"/2");
+title2Ref.on('value',function(snapchild1) {
+var name=snapchild1.child("name").val();
 
-  });}
+var poc1=snapchild1.child("poc").val();
+var pou1=snapchild1.child("pou").val();
+var pod1=snapchild1.child("pod").val();
+var du1=snapchild1.child("du").val();
+var aua1=snapchild1.child("av").val();
+console.log(aua1);
+var pu1=snapchild1.child("pu").val();
+var price1=snapchild1.child("price").val();
+document.getElementById("title1").innerHTML=name1;
+document.getElementById("totalpollution1").innerHTML=pou1+poc1+pod1;
+document.getElementById("durability1").innerHTML=du1;
+document.getElementById("avaibility1").innerHTML=aua1;
+document.getElementById("plasticcontent1").innerHTML=pu1;
+document.getElementById("description1").innerHTML=price1;
+document.getElementById("sp1").innerHTML=(du1*10)+aua1-pu1-poc1-pou1-pod1;
+});}
 
 
 </script>
