@@ -4,6 +4,7 @@ const FIREBASE_MESSAGING = firebase.messaging();
     const FIREBASE_DATABASE = firebase.database();
     //sendMsg.addEventListener("submit",sendNot);
 
+    
 firebase.auth().onAuthStateChanged(function(user)
 {
             if(user)
@@ -54,6 +55,14 @@ firebase.auth().onAuthStateChanged(function(user)
             }
 });
 
+    
+// retrieve notifications
+var notificationRef = firebase.database().ref('/notification');
+notificationRef.on('value', function(snapshot) {
+  console.log("printing notification",snapshot.val());
+});
+    
+    
 function funcLogin()
 {
     var eMail=document.getElementById("emailLin").value;
