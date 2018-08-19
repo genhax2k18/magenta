@@ -8,9 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
-
-  <script src="js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js">
   <script src="js/control.js"></script>
 </head>
 <body ng-app="myApp">
@@ -30,7 +28,8 @@
         <li class="active"><a href="index.html">Home</a></li>
         <li><a href="try.html">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><input  type="text" class="form-control" placeholder="Search" ng-model="search"></li>
+        <li><input  type="text" class="form-control" placeholder="Search" id="search"></li>
+        <li><button style="border-radius:10px" onclick="searchContent()">submit</button>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -41,8 +40,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <img src="1.jpg" alt="Img" class="img-responsive">
+    <div class="col-sm-6" height="100%">
+      <img src="1.jpg" alt="Image" class="img-responsive">
     </div>
     <div class="col-sm-6">
       <h1 id="title"></h1>
@@ -61,4 +60,56 @@
   </div>
 </footer>
 </body>
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+  var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+      }
+  };
+
+  var reqParamsearch =  getUrlParameter('search');
+
+  var config = {
+    apiKey: "AIzaSyD-DxWbF_xEc45PG0g-byOzviU3vS0HXLQ",
+    authDomain: "wman-12.firebaseapp.com",
+    databaseURL: "https://wman-12.firebaseio.com",
+    projectId: "wman-12",
+    storageBucket: "wman-12.appspot.com",
+    messagingSenderId: "465471242460"
+  };
+  firebase.initializeApp(config);
+
+
+var item = reqParamsearch;
+
+  var title=document.getElementById("title");
+  var titleRef=firebase.database().ref("products/"+ item +"/1/name");
+  titleRef.on('value',function(datasnapshot){
+  	title.innerText=datasnapshot.val();
+
+  });
+function searchContent(){
+item=document.getElementById("search").value;
+
+  var title=document.getElementById("title");
+  var titleRef=firebase.database().ref("products/"+ item +"/1/name");
+  titleRef.on('value',function(datasnapshot){
+  	title.innerText=datasnapshot.val();
+
+  });}
+
+
+</script>
 </html>

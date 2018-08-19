@@ -8,16 +8,23 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
   <script src="js/script.js" ></script>
+<<<<<<< HEAD
 
 
+=======
+</head>
+<body>
+>>>>>>> 992b3fd1a9f7bd4bda87d8e7b629fdd4ef44d774
   <script src="js/script.js"></script>
   <script src="js/control.js"></script>
 </head>
 <body ng-app="myApp">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 992b3fd1a9f7bd4bda87d8e7b629fdd4ef44d774
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -33,7 +40,8 @@
         <li class="active"><a href="index.html">Home</a></li>
         <li><a href="try.html">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><input  type="text" class="form-control" placeholder="Search" ng-model="search"></li>
+        <li><input  type="text" class="form-control" placeholder="Search"  id="search"></li>
+        <li><button style="border-radius:10px" id="input" onclick="searchContent()">submit</button>
       </ul>
       <ul class="nav navbar-nav navbar-right" >
         <li><span class="glyphicon" id="userDispNm"  style="color: aliceblue; justify-content: center; "> </span> </li>
@@ -42,7 +50,6 @@
     </div>
   </div>
 </nav>
-
 <div id="fr1">
 <div class="row">
 <div class="col-md-9" id="sec1">
@@ -52,7 +59,6 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
     </ol>
-
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
@@ -62,7 +68,6 @@
           <p>waste related</p>
         </div>
       </div>
-
       <div class="item">
         <img src="img/logo2.png" class="img-responsive"  alt="Image">
         <div class="carousel-caption">
@@ -71,7 +76,6 @@
         </div>
       </div>
     </div>
-
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -85,8 +89,6 @@
 </div>
 <div class="col-md-3 bakg" id="sec2" >
 <center>  <div class="backg">
-
-
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-1 col-form-label" ></label>
     <div class="col-sm-10">
@@ -99,22 +101,23 @@
       <input type="password" class="form-control" id="passLin" placeholder="Password">
     </div>
   </div>
-
   <div class="form-group row">
     <div class="col-sm-12">
       <button type="submit" id="btn-login" class="btn btn-primary" onclick="funcLogin()">Sign in</button>
     </div>
-
   </div>
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+</form>
+>>>>>>> 992b3fd1a9f7bd4bda87d8e7b629fdd4ef44d774
 </div>
     </center>
-
     <center>  <div class="backg">
     <form>
         <div class="form-group row">
@@ -135,11 +138,11 @@
       <input type="password" class="form-control" id="passSup" placeholder="Password">
     </div>
   </div>
-
   <div class="form-group row">
     <div class="col-sm-12">
       <button type="submit" class="btn btn-primary" onclick="funcUp()">Register</button>
     </div>
+<<<<<<< HEAD
 
   </div>   
 
@@ -148,6 +151,10 @@
 
 
 
+=======
+  </div>
+  </div>
+>>>>>>> 992b3fd1a9f7bd4bda87d8e7b629fdd4ef44d774
 </form>
 </div>
     </center>
@@ -162,7 +169,6 @@
   </div>
   <h1 ng-repeat="x in records | orderBy: '' | filter:search" >{{x}}</h1>
 </div>-->
-
 
 <!-- service for food-->
 
@@ -193,7 +199,6 @@
   </div>
 </div>
 
-
 <footer class="container-fluid text-center">
   <div>
     <ul>
@@ -209,8 +214,7 @@
   var autocomplete = new google.maps.places.Autocomplete(input);
 </script>
 </body>
-
-    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -222,9 +226,11 @@
     messagingSenderId: "465471242460"
   };
   firebase.initializeApp(config);
+
+  function searchContent() {
+    var searchData = document.getElementById("search").value;
+    window.location.assign("try.html?search="+ searchData+"&enabled=true");
+  }
 </script>
-    
 <script src="js/login.js" ></script>
-
-
 </html>
