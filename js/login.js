@@ -18,16 +18,7 @@ firebase.auth().onAuthStateChanged(function(user)
                     
                            $("#sec2").hide();
                     
-//                    firebase.database().ref('/users/').orderByChild('uid').equalTo(userUID)
-//                    
-//                    var userId = firebase.auth().currentUser.uid;
-//return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-//  var username = (snapshot.val() && snapshot.val().Name) || 'Anonymous';
-//  // ...
-//});
 
-
-                    
                             $("#sec2").removeClass("col-md-3").addClass("col-md-0");
                             $("#sec1").removeClass("col-md-9").addClass("col-md-12");
                           $("#loutBtn").show();
@@ -39,12 +30,7 @@ firebase.auth().onAuthStateChanged(function(user)
                     
                 }
                 
-//                firebase.auth().signOut().then(function() {
-//                  console.log('Signed Out');
-//                }, function(error) {
-//                  console.error('Sign Out Error', error);
-//                });
-                
+
             }
             else
             {
@@ -93,9 +79,8 @@ function funcUp(){
 
             firebase.auth().createUserWithEmailAndPassword(eMail, passWord).catch(function(error) {
           // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          window.alert("Error : - "+errorMessage);
+         
+          window.alert("Error : - "+error.message);
           // ...
         });
 
